@@ -86,15 +86,14 @@
 <div id="toggle02" class="compute"><script type="text/x-sage">
 global answer
 global answer_equation
-# Birthday problems 
+ 
 
-classmates = 30 # 총 학생의 수, 수정 가능
-birthdays <- sample(x=1:365, classmates, replace=T) #365일 중에 하나 고르기 
+classmates = 30
+birthdays <- sample(x=1:365, classmates, replace=T) 
 
-repeated <- length(birthdays) - length(unique(birthdays)) #unique는 중복을 없애주는 함수 즉 중복이 있다면 repeated는 0보다 크다 중복이 없다면 0이다 
+repeated <- length(birthdays) - length(unique(birthdays)) 
 
-cat(
-sprintf("%d people has same password\n", 2 * repeated)) # 일반적인 경우 repeated의 2배만큼은 중복이 존재한다 단, 3명이상이 같은 날을 고르는 경우는 제외하였으므로 엄밀한 추정은 아님
+cat(sprintf("%d people has same password\n", 2 * repeated)) 
 </script></div>
 
 <div class="information">
