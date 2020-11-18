@@ -16,12 +16,12 @@
     // Make *any* div with class 'compute' a Sage cell
     sagecell.makeSagecell({languages: ["sage","python"],
 	                       inputLocation: 'div.compute',
-                           evalButtonText: '문제생성',
+                           evalButtonText: '수학코딩!',
                            autoeval:true
                           });
     });
     </script>
-    <title>Random Mathematics Problem</title>
+    <title>Visual Math</title>
     <link href="./procyancss.css" rel="stylesheet" type="text/css"/>
 </head>    
     
@@ -30,7 +30,7 @@
         <input type="checkbox" id="toggle" />
         <label for="toggle" class="menu">
         <i class="fa fa-bars" id="bar"></i></label>
-    <h2><a href="#" title="처음으로">Random Mathematics Problem</a></h2>
+    <h2><a href="#" title="처음으로">Visual Math</a></h2>
         <div class='popup'></div>
           <nav class="gnb">
             <label for="toggle">
@@ -38,50 +38,35 @@
         <div class="menu">    
         <h3>CONTENTS</h3>
              <ul>
-              <li><a href="./Exercise-8.html" title="">Exercise-8</a></li>
-              <li><a href="./Exercise-17.html" title="">Exercise-17</a></li>
-             </ul>
+              <li><a href="./Exercise-3.html" title="">시어핀스키 삼각형과 확률</a></li> 
+			 </ul>
             </div>
         </nav>
     
-    <p id="subject">과목명 - 수학Ⅱ</p>
+    <p id="subject">과목명 - 수학</p>
     </div> 
     
     <div id="cont">
-    <div id="label01"><div class="button">2. 해석</div><div id="unit">적분 – 정적분<b>(고등학교)</b></div></div>
+    <div id="label01"><div class="button">1. 확률과 통계</div><div id="unit">시어핀스키 삼각형과 확률<b>(몬테카를로 방식)</b></div></div>
 
 <div id="toggle01">
 <table>
 <tr>
 	<td class="box">
-        <b>※ 정적분</b>
+        <b>※ 시어핀스키 삼각형과 확률</b>
 	<br><br>
-        [12수학Ⅱ03-03] 정적분의 뜻을 안다.
+        [목표1] 시어핀스키 삼각형을 알 수있다.
 	<br><br>
-        [12수학Ⅱ03-04] 다항함수의 정적분을 구할 수 있다.
-    <br><br><br>
-        <b>※ 정적분의 활용</b>
+        [목표2] 시어핀스키 삼각형의 응용버전인 사각형 프렉탈을 만들 수 있다.
 	<br><br>
-        [12수학Ⅱ03-05] 곡선으로 둘러싸인 도형의 넓이를 구할 수 있다.
+        [목표3] 몬테카를로 방식을 설명 할 수 있다.
 	</td>
 </tr>
 </table>    
     
 <br>    
     
-    <div class="exbox">      
-    
-    구간 <img src="./Exercise-17/[a,b].jpg" alt="" width="37px">에서 곡선<img src="./Exercise-17/y=f(x).jpg"width="75px">와 <img src="./Exercise-17/x.jpg" width="12px">축 사이의 넓이는 다음과 같다.
-      
-    <br><br><br>
-    
-    <img src="./Exercise-17/formula.jpg" width="140">
-        
-    <br><br><br>
    
-    (Q.17) 구간 <img src="./Exercise-17/PICF3F7.gif" alt="" width="44" height="15" vspace="1" hspace="0" border="0">에서 <img src="./Exercise-17/PICF3F8.gif" alt="" width="60" height="18" vspace="1" hspace="0" border="0">과 <img src="./Exercise-17/PICF409.gif" alt="" width="9" height="15" vspace="1" hspace="0" border="0">축이 이루는 영역의 면적을 구하여라.
-    </div> 
-
 <br><br>
 
 [참고자료]
@@ -97,196 +82,50 @@
 <iframe src="https://www.youtube.com/embed/Ove0rJKR8uc"></iframe> 
 </div> 
 </div>    
-    <div id="label02"><div class="button">문제풀기</div></div>
+    <div id="label02"><div class="button">수학코딩하기</div></div>
     <div class="scroll"></div>
     <div class="top">▲</div>
               
 <div id="toggle02" class="compute"><script type="text/x-sage">
 global answer
+#시어핀스키 삼각형
 import random
+import matplotlib.pyplot as plt
 
-#문제 생성부
-#각 함수는 연쇄작용을 함.
+point = [4, 4]
+fixed = [(0, 0), (10, 0), (0, 10)]
 
-def problem_num_1(): #문제에 들어갈 값 범위 랜덤 함수
-    var('x, y, a, b, c, m, n')
-    
-    a = randint(-5, 5)
-    b = randint(-10, 10)
-    c = randint(-10, 10)
-    #m = randint(b, c)
-    #n = randint(b, c)
-    
-    return a, b, c, #m, n
+for i in range(1000): # 찍을 점의 수를 결정하는 부분
 
-def problem_num_2():
-    
-    prob = problem_num_1()
-    
-    
-    while prob[1] >= prob[2]:
-        prob = problem_num_1()
-        
-    a = prob[0]
-    b = prob[1]
-    c = prob[2]
-    
-    m = randint(b, c)
-    n = randint(b, c)
-    
-    return a, b, c, m, n
-    
+	r = random.choice(fixed)
 
-def problem_condition_1():
-    
-    prob = problem_num_2()
-    
-    while prob[0] == 0:
-        prob = problem_num_2()
-    
-    a = prob[0]
-    b = prob[1]
-    c = prob[2]
-    m = prob[3]
-    n = prob[4]
-    
-    
-        
-    return a, b, c, m, n
+	point[0] = (point[0] + r[0]) / 2
+	point[1] = (point[1] + r[1]) / 2
+	plt.scatter(point[0], point[1],s=1) # scatter plot (산점도) 즉 점을 하나하나 지정된 x, y좌표에 찍는다
+	
+plt.show() #찍은 그래프를 한꺼번에 나타내 이미지로 출력하는 부분
 
-def problem_condition_2():
-    prob = problem_condition_1()
-    
-    while prob[1] >= prob[2]:
-        prob = problem_condition_1()
-    
-    a = prob[0]
-    b = prob[1]
-    c = prob[2]
-    m = prob[3]
-    n = prob[4]
-                
-    f(x) = a*(x - b)*(x - c)
-    
-    return a, b, c, m, n, f(x)
+### 시어핀스키 삼각형이 아닌 사각형 기반 프랙탈을 만드는 코드
+import random
+import matplotlib.pyplot as plt
 
-def problem_condition_3():
-    prob = problem_condition_2()
-    
-    while prob[3] >= prob[4] :
-        prob = problem_condition_2()
-    
-    a = prob[0]
-    b = prob[1]
-    c = prob[2]
-    m = prob[3]
-    n = prob[4]
-    f(x) = prob[5]
-    
-    
-    if a > 0:
-        answer = abs(integral(f(x), x, m, n))
-    else:
-        answer = integral(f(x), x, m, n)
-    
-    return answer, x, a, b, c, m, n # 답과 문제 랜덤 값 반환
+point = [4, 4]
+fixed = [(0, 0), (10, 0), (0, 10), (10, 10)]
 
 
+prev = random.choice(fixed)
+new = random.choice(fixed)
+	
+for i in range(1300):
+	while(new == prev): #이전에 선택한 점이라고하면 새로 점을 골라 겹치는 경우를 제외한다
+		new = random.choice(fixed)
+	prev = new
+	plt.scatter(point[0], point[1],s=1) # s=1는 점의 크기를 나타낸다
 
-def problem_answer_list(): 
-                            # 답안과 결합될 숫자(랜덤화 및 중복 값 제거)를 생성하는 함수
-    prob = problem_condition_3()
-    
-    answer = prob[0]    
-    x = prob[1]
-    a = prob[2]
-    b = prob[3]
-    c = prob[4]
-    m = prob[5]
-    n = prob[6]
-    
-    
-    answer_calc_list = []
-    random_answer_calc = random.randint(2,5)
-    for i in range(4):
-        while random_answer_calc in answer_calc_list:
-            random_answer_calc = random.randint(2,5)
-        answer_calc_list.append(random_answer_calc)
-    
-    select_answer = [(answer-answer_calc_list[0]), (answer*answer_calc_list[1])+answer_calc_list[2], (answer+answer_calc_list[2])/answer_calc_list[3], (answer+answer_calc_list[3]), answer]
-    
-    return [select_answer, answer, [x, a, b, c, m, n]] #list 로 반환
-
-def final_answer_list(): #problem_answer_list를 다시 실행시키면서 답안의 중복 값을 잡는 함수
-    
-    select_answer = problem_answer_list()
-    select_answer_list = select_answer[0]
-    answer = select_answer[1]
-    problem_number_list = select_answer[2]
-    
-        
-    while len(select_answer_list) != len(set(select_answer_list)):
-            
-        select_answer = problem_answer_list()
-        
-        select_answer_list = select_answer[0]
-        answer = select_answer[1]
-        
-    return [select_answer_list, answer, problem_number_list] # 2중 list 형식으로 반환
-
-final = final_answer_list()
-
-select_answer_list = final[0]
-
-answer = final[1]
-
-problem_number_list = final[2]
-
-x = problem_number_list[0]
-a = problem_number_list[1]
-b = problem_number_list[2]
-c = problem_number_list[3]
-m = problem_number_list[4]
-n = problem_number_list[5]
-
-d = - a * (b + c)
-e = b * c
-
-f(x) = a*(x - b)*(x - c)
-expr = expand(f(x))
-
-sol = solve(diff(f, x) == 0, x)
-s = sol[0].rhs()
-u = max([abs(f(s)), abs(f(m)), abs(f(n))])
-
-fp = plot(f, (x, m, n), fill = true)
-tp = plot(f, (x, m - 2, n + 2))
-
-
-#mp = parametric_plot((m, x), (x, -100, 100), color = "green")
-#np = parametric_plot((n, x), (x, -100, 100), color = "red")
-
-random.shuffle(select_answer_list) # 마지막으로 답안을 섞어주는 역할을 하는 명령어
-
-#expr = a*x^2 + d*x + e
-
-#문제
-show(html("<p>구간 $[%s, %s]$에서 $f(x) = %s $와(과) $x$축이 이루는 영역의 면적을 구하여라.</p>"%(m, n, latex(expr))))
-
-#답안 확인
-@interact
-def _(auto_update=False, answers = selector([(None, ""),(select_answer_list[0],select_answer_list[0]), (select_answer_list[1],select_answer_list[1]),(select_answer_list[2],select_answer_list[2]),(select_answer_list[3],select_answer_list[3]),(select_answer_list[4],select_answer_list[4])], buttons=True)):
-    
-    if answer == answers:
-        show(html("<p><span style='color:blue'>Correct(정답)</span></p>"))
-        show(fp + tp, ymin = -u - 5 , ymax = u + 5)
-        
-    elif answers == None:
-        show(html("<p><span style='color:blue'>Please input your answer in the spaces above.</span></p><p>(위의 빈칸에 답을 입력하고 [Update]버튼을 클릭하세요.)</p>"))
-        
-    else:
-        show(html("<p><span style='color:red'>Incorrect(오답)</span></p> <p>Answer(답안): <br> 구간 $[%s, %s]$에서 $f(x) = %s$ 와(과) $x$축이 이루는 영역의 면적은 $\\int_{%s}^{%s} \\left|%s\\right| dx=%s$이다."%(m, n, latex(expr), m, n, latex(expr), latex(answer))))
-        show(fp + tp, ymin = -u - 5 , ymax = u + 5)
+	point[0] = (point[0] + new[0]) / 2
+	point[1] = (point[1] + new[1]) / 2 #중점을 찍는 것은 동일, 만약 /2가 아니라 m:n 내분점으로 식을 교체해도 새로운 무늬의 프랙탈이 형성된다
+	
+plt.show()
 
 
 </script></div>
@@ -298,8 +137,11 @@ def _(auto_update=False, answers = selector([(None, ""),(select_answer_list[0],s
  <p id="info"> 
  <br><br>     
 ○ 참여자<br>
-- 이상구 교수 (성균관대, 수학과)<br>
-- 이재화 박사 (성균관대, 에너지환경융합 KIURI 연구단)<br>
+- 김지환 (인천과학예술영재학교)<br>
+- 김경택 (인천과학예술영재학교)<br>
+- 조형준 (인천과학예술영재학교)<br>
+- 신재우 (인천과학예술영재학교)<br>
+- 최정심 (인천과학예술영재학교 교사)<br>
 - 이재윤 대표 (㈜프로키언)<br>
 <br><br>
 ○ 보유 특허<br>
@@ -311,8 +153,7 @@ def _(auto_update=False, answers = selector([(None, ""),(select_answer_list[0],s
 - 기술이전회사 :&nbsp; ㈜프로키언 (대표: 이재윤)<br>
 <br><br>
 ○ 사사<br>
-- 성균관대 기술지주 주식회사, 『2020년 BRIDGE+ 실용화 개발지원 과제』<br>
-- 한국연구재단 혁신성장 선도 고급연구인재 육성사업, (No.2020M3H1A1077095).<br>
+- 인천과학예술영재학교 , 2020 Steam Activity <br>
 <br><br>
  </p>
     </div></div>
