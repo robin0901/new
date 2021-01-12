@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>    
+    <meta charset="UTF-8">
+    <meta name="Generator" content="Hancom HWP 8.5.8.1677">
+    <meta HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({languages: ["sage","python"],
+	                       inputLocation: 'div.compute',
+                           evalButtonText: '수학코딩하기',
+                           autoeval:true
+                          });
+        });
+    </script>
+    <title>Visual Math</title>
+    <link href="./procyancss.css" rel="stylesheet" type="text/css"/>
+</head>    
+
+<body>
+    <div id="header">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" class="menu">
+        <i class="fa fa-bars" id="bar"></i></label>
+    <h2><a href="#" title="처음으로">Visual Math</a></h2>
+        <div class='popup'></div>
+          <nav class="gnb">
+            <label for="toggle">
+                <i class="fa fa-times"></i></label>
+         <div class="menu">    
+        <h3>CONTENTS</h3>
+            <ul>
+             <li><a href="./Exercise-1.html" title="">생활속의 통계1(비밀번호)</a></li>
+             <li><a href="./Exercise-2.html" title="">생활속의 통계2(감염자)</a></li>
+             <li><a href="./Exercise-3.html" title="">시어핀스키 삼각형과 확률3</a></li>
+             <li><a href="./Exercise-4.html" title="">수의 체계</a></li>
+             <li><a href="./Exercise-5.html" title="">항등원 역원</a></li>
+             <li><a href="./Exercise-6.html" title="">가비의 리</a></li>
+             <li><a href="./Exercise-7.html" title="">코딩으로 그림그리기</a></li>
+             <li><a href="./Exercise-8.html" title="">맨홀 뚜껑은 왜 둥글까?</a></li>
+             <li><a href="./Exercise-9.html" title="">산술기하평균</a></li>
+             <li><a href="./Exercise-10.html" title="">한붓그리기</a></li>
+             <li><a href="./Exercise-11.html" title="">최소 신장 트리</a></li>
+             <li><a href="./Exercise-12.html" title="">네트워크 이론</a></li>
+            </ul>
+           </div>
+       </nav>
+        
+    <p id="subject">기하 - 코딩하기</p> 
+    </div>
+    
+    <div id="cont">
+    <div id="label01"><div class="button">기하</div><div id="unit">코딩으로 그림그리기<b></div></div>  
+    
+<div id="toggle01">
+<table>
+<tr>
+	<td class="box">
+        <b>※코딩으로 그림그리기</b>
+	<br><br>
+        [목표 1] 기본적인 직선, 원, 곡선, 쌍곡선 등 함수를 그려볼 수 있다.
+	<br><br>
+        [목표 2] 함수를 이용해 그림을 그릴 수 있다.
+	</td>
+</tr>
+</table>
+
+<br><br>
+
+[참고자료]
+
+<br>
+<div id="video">강의 동영상 열기</div>
+<br>
+<div id="toggle01-1">
+<iframe src="https://www.youtube.com/embed/_ExvRTK4HiY"></iframe> 
+</div>
+</div>
+    <div id="label02"><div class="button">수학코딩!</div></div>
+    <div class="scroll"></div>
+    <div class="top">▲</div>
+    
+<div id="toggle02" class="compute"><script type="text/x-sage">
+var('x,y')
+A = plot(0.037*(x-2)^2*(x+2)^2,(x,-2,2),color='black',thickness=3)  #아래쪽
+B = plot(0.015*(x-2)^2*(x+2)^2,(x,2,4.392),color='black',thickness=3)  #아래쪽 오른쪽
+C = plot(0.0192*(x-2)^2*(x+2)^2,(x,-3,-2),color='black',thickness=3)  #아래쪽 왼쪽
+D = implicit_plot((x-5.1)^2+(y-5.8)^2-5.7,(x,0,4.39),(y,0,7.902),color='black',linewidth=3)  #오른쪽 원
+E = plot(-0.038*(x-2)^2*(x+2)^2+9,(x,-2,2),color='black',thickness=3)  #위쪽
+F = plot(-0.008*(x-2)^2*(x+2)^2+9,(x,2,3.95),color='black',thickness=3)  #위쪽 오른쪽
+G = implicit_plot((x-2.255)^2+(y-5.1)^2-49,(x,-5,-3),(y,0,7),color='black',linewidth=3)  #왼쪽 가운데
+H = implicit_plot((x+1.59)^2+(y-5.97)^2-9.4,(x,-5,-2),(y,7,10),color='black',linewidth=3)  #위쪽 왼쪽
+I = implicit_plot((x+0.2)^2+(y-11.2)^2-5,(x,-0.02,4),(y,8.5,11.45),color='black',linewidth=3)  #잎사귀 아래
+J = implicit_plot((x-2.23)^2+(y-9.2)^2-5,(x,-4,2.05),(y,8.96,11.5),color='black',linewidth=3)  #잎사귀 위
+show(A+B+C+D+E+F+G+H+I+J,figsize=4)  #모두 보이게 만들기 
+</script></div>
+
+<div class="information">
+       <label class="button" style="display:inline-block; padding:10px 20px; cursor:pointer;" for="info">INDEX</label>
+        <input type="checkbox" id="info">
+        
+ <p id="info">
+ <br><br>
+○ 참여자<br>
+- 김지환 (인천과학예술영재학교)<br>
+- 김경택 (인천과학예술영재학교)<br>
+- 조형준 (인천과학예술영재학교)<br>
+- 신재우 (인천과학예술영재학교)<br>
+- 최정심 (인천과학예술영재학교 교사)<br>
+- 이재윤 대표 (㈜프로키언)<br>
+<br><br>
+○ 보유 특허<br>
+- 특허명칭 :&nbsp; 임의 수학 문제를 제공하는 클라우드 컴퓨팅 서버 및 방법 및 기록매체<br>
+- 등록번호 :&nbsp; 10-1560802<br>
+- 등록국가 :&nbsp; 대한민국<br>
+- 등록년도 :&nbsp; 2015<br>
+- 발명자 :&nbsp;&nbsp;&nbsp; 이상구 외 6인<br>
+- 기술이전회사 :&nbsp; ㈜프로키언 (대표: 이재윤)<br>
+<br><br>
+○ 사사<br>
+- 인천과학예술영재학교,2020 Steam Activity <br>
+<br><br>
+ </p>
+    </div></div>
+    
+    <footer>
+       <br>
+        <p><b>Copyright @ 2020 <a href="http://matrix.skku.ac.kr" target="blank">SKKU Matrix Lab</a>. All rights reserved.</b><br><b> Made by Manager: Prof. <a href="mailto:sglee@skku.edu">Sang-Gu Lee</a> and Dr. <a href="mailto:jhlee2chn@skku.edu">Jae Hwa Lee</a></b></p>
+ 
+        <p>*This research was supported by Korea Initiative for fostering University of Research and Innovation <br> Program of the National Research Foundation (NRF) funded by the Korean government (MSIT) (No.2020M3H1A1077095).</p> 
+        <br>
+        <p><img src="http://sagemath.org/pix/sage_logo_new_l_hc.png" width="200px"></p>
+
+     </footer>  
+</body>
+     
+  	<script>
+    //설명부분 접는 코드 
+    $(document).ready(function(){
+            $('#label01').click(function(){
+            $('#toggle01').stop().slideToggle();
+        });
+     
+    //문제부분 접는 코드    
+            $('#label02').click(function(){
+            $('#toggle02').stop().slideToggle();
+        });
+     });  
+    
+    //유튜브 동영상 부분 접는 코드    
+    $(document).ready(function(){
+        $('#video').click(function(){
+            $('#toggle01-1').stop().slideToggle();
+                if ($(this).text() == "강의 동영상 열기"){$(this).text("강의 동영상 닫기");} 
+                else {$(this).text("강의 동영상 열기");}; 
+        });
+     });     
+    
+    $(document).ready(function(){
+        $('.popup a').click(function(){
+            $('.popup').fadeIn();
+        });
+    });   
+        
+    //메뉴 슬라이더
+    $(document).ready(function(){            
+        $('.menu').click(function(){
+            $('.popup').fadeIn();
+         });    
+            
+        $('.gnb label').click(function(){
+            $('.popup').fadeOut();
+        });
+      });   
+        
+        
+       
+    //top버튼과 헤더 스크립트    
+    $(document).ready(function(){
+            $('.top').hide();
+       $(window).scroll(function(){
+
+            var scrollPos = $(window).scrollTop(); //윈도우 스크롤 위치값
+            $('.scroll').html(scrollPos);
+            //스크롤 좌표값 400       
+            if(scrollPos>=400){
+                $('.top').fadeIn();
+            }else{
+                $('.top').fadeOut();
+            }
+        });
+        
+        $(window).scroll(function(){
+            var scrollPos = $(window).scrollTop();
+            $('.scroll').html(scrollPos);      
+            if(scrollPos>=150){
+                $('#header').fadeOut();
+            }else{
+                $('#header').fadeIn();
+            }
+        });
+        
+     //top버튼을 클릭하면 html, body 태그를 찾아서 위로 올라가기
+        $('.top').click(function(){
+            $('html, body').animate({scrollTop:'0'},500);
+        });
+    });    
+        
+        
+
+    </script>
+</html>
