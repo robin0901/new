@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>    
+    <meta charset="UTF-8">
+    <meta name="Generator" content="Hancom HWP 8.5.8.1677">
+    <meta HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({languages: ["sage","python"],
+	                       inputLocation: 'div.compute',
+                           evalButtonText: '수학 코딩!',
+                           autoeval:true
+                          });
+        });
+    </script>
+    <title>수의 체계</title>
+    <link href="./procyancss.css" rel="stylesheet" type="text/css"/>
+</head>    
+
+<body>
+    <div id="header">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" class="menu">
+        <i class="fa fa-bars" id="bar"></i></label>
+    <h2><a href="#" title="처음으로">수의 체계</a></h2>
+        <div class='popup'></div>
+          <nav class="gnb">
+            <label for="toggle">
+                <i class="fa fa-times"></i></label>
+         <div class="menu">    
+        <h3>CONTENTS</h3>
+             <ul>
+              <li><a href="./Exercise-1.html" title="">생활속의 통계1(비밀번호)</a></li>
+              <li><a href="./Exercise-2.html" title="">생활속의 통계2(감염자)</a></li>
+		      <li><a href="./Exercise-3.html" title="">시어핀스키 삼각형과 확률3</a></li>
+              <li><a href="./Exercise-4.html" title="">수의 체계</a></li>
+              <li><a href="./Exercise-5.html" title="">항등원 역원</a></li>
+              <li><a href="./Exercise-6.html" title="">가비의 리</a></li>
+              <li><a href="./Exercise-7.html" title="">코딩으로 그림그리기</a></li>
+              <li><a href="./Exercise-8.html" title="">맨홀 뚜껑은 왜 둥글까?</a></li>
+              <li><a href="./Exercise-9.html" title="">산술기하평균</a></li>
+              <li><a href="./Exercise-10.html" title="">한붓그리기</a></li>
+              <li><a href="./Exercise-11.html" title="">최소 신장 트리</a></li>
+              <li><a href="./Exercise-12.html" title="">네트워크 이론</a></li>
+             </ul>
+            </div>
+        </nav>
+        
+    <p id="subject">대수 - 수의 체계</p> 
+    </div>
+    
+    <div id="cont">
+    <div id="label01"><div class="button">대수</div><div id="unit">수의 체계<b>(중.고등학교)</b></div></div>  
+    
+<div id="toggle01">
+<table>
+<tr>
+	<td class="box">
+        <b>※ 수의 체계</b>
+	<br><br>
+        우리는 수의 체계에 대해서 초등학교 때부터 정말 많이 배웠습니다 
+	<br><br>
+         수의 체계의 전체적인 내용과 재미있는 수들의 기원에 대해 알아보고 그중 복소수와 무한에 대해서 더 알아보아요!!  
+	<br><br>
+		 "크기가 일정한 복소수의 자취", "무한의 시각화"등 자료를 참고 해보아요
+	</td>
+</tr>
+</table>
+    
+<br>
+      
+      
+  
+<br><br>
+
+[참고자료]
+<br>
+<img src="무한 시각화.gif" alt="My Image">
+<br>
+<a href="http://localhost:8888/notebooks/%20%EC%88%98%EC%9D%98%20%EC%B2%B4%EA%B3%84.ipynb" target="_blank">http://localhost:8888/notebooks/%20%EC%88%98%EC%9D%98%20%EC%B2%B4%EA%B3%84.ipynb</a>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<div id="video">강의 동영상 열기</div>
+<br>
+<div id="toggle01-1">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6QJW4CS3uv0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+    <div id="label02"><div class="button">수학코딩!</div></div>
+    <div class="scroll"></div>
+    <div class="top">▲</div>
+    
+<div id="toggle02" class="compute"><script type="text/x-sage">
+
+from fractions import Fraction # 분수나타내는 클래스/모듈, 분수를 a/b를 (a, b)로 나타냄 
+a= int (input('역원을 구하고 싶은 수:'))
+choice=input('덧셈과 곱셈중 역원을 구하고  싶은 연산을 선택하세요:')
+if choice=='+':
+    e=0-a  #a+e=0 인 e 구하기
+    print(e) 
+elif choice=='*':
+    e=(1,a)
+    print(e)
+    
+
+
+</script></div>
+
+<div class="information">
+       <label class="button" style="display:inline-block; padding:10px 20px; cursor:pointer;" for="info">INDEX</label>
+        <input type="checkbox" id="info">
+        
+ <p id="info">
+ <br><br>
+○ 참여자<br>
+- 인천과학예술 영재학교 1학년 김지환<br>
+- 인천과학예술 영재학교 1학년 조형준<br>
+- 인천과학예술 영재학교 1학년 신재우 <br>
+- 인천과학예술 영재학교 1학년 김경택 <br>
+- 인천과학예술 영재학교 교사 최정심 선생님 <br>
+- 이재윤 대표 (㈜프로키언)<br>
+<br><br>
+
+<br><br>
+○ 사사<br>
+
+ </p>
+    </div></div>
+    
+    <footer>
+       <br>
+        <p><img src="./signature.jpg" width="210px" hspace="15">   <img src="http://sagemath.org/pix/sage_logo_new_l_hc.png" width="200px"></p>
+
+     </footer>  
+</body>
+     
+  	<script>
+    //설명부분 접는 코드 
+    $(document).ready(function(){
+            $('#label01').click(function(){
+            $('#toggle01').stop().slideToggle();
+        });
+     
+    //문제부분 접는 코드    
+            $('#label02').click(function(){
+            $('#toggle02').stop().slideToggle();
+        });
+     });  
+    
+    //유튜브 동영상 부분 접는 코드    
+    $(document).ready(function(){
+        $('#video').click(function(){
+            $('#toggle01-1').stop().slideToggle();
+                if ($(this).text() == "강의 동영상 열기"){$(this).text("강의 동영상 닫기");} 
+                else {$(this).text("강의 동영상 열기");}; 
+        });
+     });     
+    
+    $(document).ready(function(){
+        $('.popup a').click(function(){
+            $('.popup').fadeIn();
+        });
+    });   
+        
+    //메뉴 슬라이더
+    $(document).ready(function(){            
+        $('.menu').click(function(){
+            $('.popup').fadeIn();
+         });    
+            
+        $('.gnb label').click(function(){
+            $('.popup').fadeOut();
+        });
+      });   
+        
+        
+       
+    //top버튼과 헤더 스크립트    
+    $(document).ready(function(){
+            $('.top').hide();
+       $(window).scroll(function(){
+
+            var scrollPos = $(window).scrollTop(); //윈도우 스크롤 위치값
+            $('.scroll').html(scrollPos);
+            //스크롤 좌표값 400       
+            if(scrollPos>=400){
+                $('.top').fadeIn();
+            }else{
+                $('.top').fadeOut();
+            }
+        });
+        
+        $(window).scroll(function(){
+            var scrollPos = $(window).scrollTop();
+            $('.scroll').html(scrollPos);      
+            if(scrollPos>=150){
+                $('#header').fadeOut();
+            }else{
+                $('#header').fadeIn();
+            }
+        });
+        
+     //top버튼을 클릭하면 html, body 태그를 찾아서 위로 올라가기
+        $('.top').click(function(){
+            $('html, body').animate({scrollTop:'0'},500);
+        });
+    });    
+        
+        
+
+    </script>
+</html>
