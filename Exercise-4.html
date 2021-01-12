@@ -32,7 +32,7 @@
         <input type="checkbox" id="toggle" />
         <label for="toggle" class="menu">
         <i class="fa fa-bars" id="bar"></i></label>
-    <h2><a href="#" title="처음으로">Visual Math</a></h2>
+    <h2><a href="#" title="처음으로">수의 체계</a></h2>
         <div class='popup'></div>
           <nav class="gnb">
             <label for="toggle">
@@ -72,7 +72,9 @@
 	<br><br>
          수의 체계의 전체적인 내용과 재미있는 수들의 기원에 대해 알아보고 그중 복소수와 무한에 대해서 더 알아보아요!!  
 	<br><br>
-		 "크기가 일정한 복소수의 자취", "무한의 시각화"등 자료를 참고 해보아요
+		 "크기가 일정한 복소수의 자취", "무한의 시각화"등 자료를 참고 해보아요 아래 '크기가 일정한 복소수의 자취' 코드에서 
+		 r(r=옆에 값) 값을 직접 수정해보면서 코드를 실행 해보아요
+
 	</td>
 </tr>
 </table>
@@ -87,7 +89,7 @@
 <br>
 <img src="무한 시각화.gif" alt="My Image">
 <br>
-<a href="http://localhost:8888/notebooks/%20%EC%88%98%EC%9D%98%20%EC%B2%B4%EA%B3%84.ipynb" target="_blank">http://localhost:8888/notebooks/%20%EC%88%98%EC%9D%98%20%EC%B2%B4%EA%B3%84.ipynb</a>
+<a href="http://127.0.0.1:8888." target="_blank">http://127.0.0.1:8888.</a>
 <br>
 <br>
 <br>
@@ -106,15 +108,23 @@
     
 <div id="toggle02" class="compute"><script type="text/x-sage">
 
-from fractions import Fraction # 분수나타내는 클래스/모듈, 분수를 a/b를 (a, b)로 나타냄 
-a= int (input('역원을 구하고 싶은 수:'))
-choice=input('덧셈과 곱셈중 역원을 구하고  싶은 연산을 선택하세요:')
-if choice=='+':
-    e=0-a  #a+e=0 인 e 구하기
-    print(e) 
-elif choice=='*':
-    e=(1,a)
-    print(e)
+import matplotlib.pyplot as plt
+from numpy import *
+
+r=4
+Z=[r*exp(1j*t*pi) for t in linspace (0,6,200)]
+x=real(Z)
+y=imag(Z)
+fig=plt.figure()
+ax=fig.add_subplot(111)
+plt.plot (x, y)
+plt. ylabel ('Imaginary')
+plt.xlabel ('Real')
+plt.axis ([-20,20,-20,20])
+plt.axhline (y=0,color='black')
+plt.axvline (x=0, color='black')
+ax.set_aspect('equal', adjustable='box', anchor='C', share=False)
+plt.show()
     
 
 
@@ -124,33 +134,26 @@ elif choice=='*':
        <label class="button" style="display:inline-block; padding:10px 20px; cursor:pointer;" for="info">INDEX</label>
         <input type="checkbox" id="info">
         
- <p id="info"> 
- <br><br>     
+ <p id="info">
+ <br><br>
 ○ 참여자<br>
-- 김지환 (인천과학예술영재학교)<br>
-- 김경택 (인천과학예술영재학교)<br>
-- 조형준 (인천과학예술영재학교)<br>
-- 신재우 (인천과학예술영재학교)<br>
-- 최정심 (인천과학예술영재학교 교사)<br>
+- 인천과학예술 영재학교 1학년 김지환<br>
+- 인천과학예술 영재학교 1학년 조형준<br>
+- 인천과학예술 영재학교 1학년 신재우 <br>
+- 인천과학예술 영재학교 1학년 김경택 <br>
+- 인천과학예술 영재학교 교사 최정심 선생님 <br>
 - 이재윤 대표 (㈜프로키언)<br>
 <br><br>
-○ 보유 특허<br>
-- 특허명칭 :&nbsp; 임의 수학 문제를 제공하는 클라우드 컴퓨팅 서버 및 방법 및 기록매체<br>
-- 등록번호 :&nbsp; 10-1560802<br>
-- 등록국가 :&nbsp; 대한민국<br>
-- 등록년도 :&nbsp; 2015<br>
-- 발명자 :&nbsp;&nbsp;&nbsp; 이상구 외 6인<br>
-- 기술이전회사 :&nbsp; ㈜프로키언 (대표: 이재윤)<br>
+
 <br><br>
 ○ 사사<br>
-- 인천과학예술영재학교,2020 Steam Activity <br>
-<br><br>
+
  </p>
     </div></div>
     
     <footer>
        <br>
-        <p><img src="http://sagemath.org/pix/sage_logo_new_l_hc.png" width="200px"></p>
+        <p><img src="./signature.jpg" width="210px" hspace="15">   <img src="http://sagemath.org/pix/sage_logo_new_l_hc.png" width="200px"></p>
 
      </footer>  
 </body>
