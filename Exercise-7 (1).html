@@ -2,11 +2,13 @@
 <html lang="ko">
 
 <head>    
-    <meta NAME="Generator" content="Hancom HWP 8.5.8.1677">    
-    <meta HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8">    
+    <meta charset="UTF-8">
+    <meta name="Generator" content="Hancom HWP 8.5.8.1677">
+    <meta HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
     <script>$(function () {
     // Make the div with id 'mycell' a Sage cell
@@ -24,7 +26,7 @@
     <title>Visual Math</title>
     <link href="./procyancss.css" rel="stylesheet" type="text/css"/>
 </head>    
-    
+
 <body>
     <div id="header">
         <input type="checkbox" id="toggle" />
@@ -35,8 +37,8 @@
           <nav class="gnb">
             <label for="toggle">
                 <i class="fa fa-times"></i></label>
-        <div class="menu">    
-       <h3>CONTENTS</h3>
+         <div class="menu">    
+        <h3>CONTENTS</h3>
             <ul>
              <li><a href="./Exercise-1.html" title="">생활속의 통계1(비밀번호)</a></li>
              <li><a href="./Exercise-2.html" title="">생활속의 통계2(감염자)</a></li>
@@ -53,47 +55,62 @@
             </ul>
            </div>
        </nav>
-    
-    <p id="subject">과목명 - 수학</p>
-    </div> 
+        
+    <p id="subject">과목명 - 수학</p> 
+    </div>
     
     <div id="cont">
-    <div id="label01"><div class="button">기하</div><div id="unit">산술기하평균</b></div></div>
-
+    <div id="label01"><div class="button">기하</div><div id="unit">코딩으로 그림그리기<b></div></div>  
+    
 <div id="toggle01">
 <table>
 <tr>
 	<td class="box">
-        <b>※ 산술기하평균</b>
+        <b>※코딩으로 그림그리기</b>
 	<br><br>
-        [목표 1] 산술기하평균의 정의에 대해 알 수 있다.
+        [목표 1] 기본적인 직선, 원, 곡선, 쌍곡선 등 함수를 그려볼 수 있다.
 	<br><br>
-        [목표 2] 산술기하평균의 증명 방법을 다양하게 알 수 있다.
+        [목표 2] 함수를 이용해 그림을 그릴 수 있다.
 	</td>
 </tr>
-</table>    
+</table>
 
 <br><br>
 
 [참고자료]
 
 <br>
-<a href="https://www.geogebra.org/m/ppv2kthd" target="_blank">https://www.geogebra.org/m/ppv2kthd</a>
-<br>
-<br>
-<br>
 <div id="video">강의 동영상 열기</div>
 <br>
 <div id="toggle01-1">
-<iframe src="https://www.youtube.com/embed/fnA98JsFGHk"></iframe> 
-</div> 
+<iframe src="https://www.youtube.com/embed/_ExvRTK4HiY"></iframe> 
+</div>
+</div>
+    <div id="label02"><div class="button">수학코딩!</div></div>
+    <div class="scroll"></div>
+    <div class="top">▲</div>
+    
+<div id="toggle02" class="compute"><script type="text/x-sage">
+var('x,y')
+A = plot(0.037*(x-2)^2*(x+2)^2,(x,-2,2),color='black',thickness=3)  #아래쪽
+B = plot(0.015*(x-2)^2*(x+2)^2,(x,2,4.392),color='black',thickness=3)  #아래쪽 오른쪽
+C = plot(0.0192*(x-2)^2*(x+2)^2,(x,-3,-2),color='black',thickness=3)  #아래쪽 왼쪽
+D = implicit_plot((x-5.1)^2+(y-5.8)^2-5.7,(x,0,4.39),(y,0,7.902),color='black',linewidth=3)  #오른쪽 원
+E = plot(-0.038*(x-2)^2*(x+2)^2+9,(x,-2,2),color='black',thickness=3)  #위쪽
+F = plot(-0.008*(x-2)^2*(x+2)^2+9,(x,2,3.95),color='black',thickness=3)  #위쪽 오른쪽
+G = implicit_plot((x-2.255)^2+(y-5.1)^2-49,(x,-5,-3),(y,0,7),color='black',linewidth=3)  #왼쪽 가운데
+H = implicit_plot((x+1.59)^2+(y-5.97)^2-9.4,(x,-5,-2),(y,7,10),color='black',linewidth=3)  #위쪽 왼쪽
+I = implicit_plot((x+0.2)^2+(y-11.2)^2-5,(x,-0.02,4),(y,8.5,11.45),color='black',linewidth=3)  #잎사귀 아래
+J = implicit_plot((x-2.23)^2+(y-9.2)^2-5,(x,-4,2.05),(y,8.96,11.5),color='black',linewidth=3)  #잎사귀 위
+show(A+B+C+D+E+F+G+H+I+J,figsize=4)  #모두 보이게 만들기 
+</script></div>
 
 <div class="information">
        <label class="button" style="display:inline-block; padding:10px 20px; cursor:pointer;" for="info">INDEX</label>
         <input type="checkbox" id="info">
         
- <p id="info"> 
- <br><br>     
+ <p id="info">
+ <br><br>
 ○ 참여자<br>
 - 김지환 (인천과학예술영재학교)<br>
 - 김경택 (인천과학예술영재학교)<br>
@@ -124,7 +141,7 @@
         <br>
         <p><img src="./signature.jpg" width="210px" hspace="15">   <img src="http://sagemath.org/pix/sage_logo_new_l_hc.png" width="200px"></p>
 
-     </footer>   
+     </footer>  
 </body>
      
   	<script>
@@ -138,7 +155,7 @@
             $('#label02').click(function(){
             $('#toggle02').stop().slideToggle();
         });
-     }); 
+     });  
     
     //유튜브 동영상 부분 접는 코드    
     $(document).ready(function(){
@@ -166,8 +183,8 @@
         });
       });   
         
-   
         
+       
     //top버튼과 헤더 스크립트    
     $(document).ready(function(){
             $('.top').hide();
@@ -193,13 +210,13 @@
             }
         });
         
-        //top버튼을 클릭하면 html, body 태그를 찾아서 위로 올라가기
+     //top버튼을 클릭하면 html, body 태그를 찾아서 위로 올라가기
         $('.top').click(function(){
             $('html, body').animate({scrollTop:'0'},500);
         });
     });    
         
         
-        
+
     </script>
 </html>
