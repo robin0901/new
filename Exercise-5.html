@@ -23,7 +23,7 @@
                           });
         });
     </script>
-    <title>Visual Math</title>
+    <title>항등원 역원</title>
     <link href="./procyancss.css" rel="stylesheet" type="text/css"/>
 </head>    
 
@@ -32,7 +32,7 @@
         <input type="checkbox" id="toggle" />
         <label for="toggle" class="menu">
         <i class="fa fa-bars" id="bar"></i></label>
-    <h2><a href="#" title="처음으로">수의 체계</a></h2>
+    <h2><a href="#" title="처음으로">항등원 역원</a></h2>
         <div class='popup'></div>
           <nav class="gnb">
             <label for="toggle">
@@ -56,25 +56,24 @@
             </div>
         </nav>
         
-    <p id="subject">대수 - 수의 체계</p> 
+    <p id="subject">대수 - 항등원 역원</p> 
     </div>
     
     <div id="cont">
-    <div id="label01"><div class="button">대수</div><div id="unit">수의 체계<b>(중.고등학교)</b></div></div>  
+    <div id="label01"><div class="button">대수</div><div id="unit">항등원 역원<b>(고등학교)</b></div></div>  
     
 <div id="toggle01">
 <table>
 <tr>
 	<td class="box">
-        <b>※ 수의 체계</b>
+        <b>※ 항등원 역원</b>
 	<br><br>
-        우리는 수의 체계에 대해서 초등학교 때부터 정말 많이 배웠습니다 
+        연산법칙은 크게 세가지로 나눌 수 있다. 이들은 우리가 중학교 때
 	<br><br>
-         수의 체계의 전체적인 내용과 재미있는 수들의 기원에 대해 알아보고 그중 복소수와 무한에 대해서 더 알아보아요!!  
+         항등원과 역원은 연산법칙에서 등장하는 개념들이다. 항등원은  항등원과 어떤 수를 연산하던 그 값을 그대로 그 수가 나오게 하고 
+		역원은 수 마다 다르다. 정수 a에 대해 정의되는 역원은 a와 연산한 결과가 항상 항등원이 나온다. 
 	<br><br>
-		 "크기가 일정한 복소수의 자취", "무한의 시각화"등 자료를 참고 해보아요 아래 '크기가 일정한 복소수의 자취' 코드에서 
-		 r(r=옆에 값) 값을 직접 수정해보면서 코드를 실행 해보아요
-
+		다음 "역원 계산기"로 항등원과 역원에 대해 체험 해보자 아래 "역원 계산기" 코드에서 역원을 구하고 싶은 수인 a값과 연산종류(choice='여기있는 값')를 바꿔서 역원계산기 코드를 실행해 보아요
 	</td>
 </tr>
 </table>
@@ -86,13 +85,7 @@
 <br><br>
 
 [참고자료]
-<br>
-<img src="무한 시각화.gif" alt="My Image">
-<br>
-<a href="http://127.0.0.1:8888." target="_blank">http://127.0.0.1:8888.</a>
-<br>
-<br>
-<br>
+
 <br>
 
 <br>
@@ -100,7 +93,7 @@
 <div id="video">강의 동영상 열기</div>
 <br>
 <div id="toggle01-1">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6QJW4CS3uv0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7l7Hr_bJnmw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
     <div id="label02"><div class="button">수학코딩!</div></div>
     <div class="scroll"></div>
@@ -108,23 +101,15 @@
     
 <div id="toggle02" class="compute"><script type="text/x-sage">
 
-import matplotlib.pyplot as plt
-from numpy import *
-
-r=4
-Z=[r*exp(1j*t*pi) for t in linspace (0,6,200)]
-x=real(Z)
-y=imag(Z)
-fig=plt.figure()
-ax=fig.add_subplot(111)
-plt.plot (x, y)
-plt. ylabel ('Imaginary')
-plt.xlabel ('Real')
-plt.axis ([-20,20,-20,20])
-plt.axhline (y=0,color='black')
-plt.axvline (x=0, color='black')
-ax.set_aspect('equal', adjustable='box', anchor='C', share=False)
-plt.show()
+from fractions import Fraction # 분수나타내는 클래스/모듈, 분수를 a/b를 (a, b)로 나타냄 
+a=3
+choice='+'('덧셈(+)과 곱셈(*)중 역원을 구하고  싶은 연산을 선택하세요:')
+if choice=='+':
+    e=0-a  #a+e=0 인 e 구하기
+    print(e) 
+elif choice=='*':
+    e=(1,a)
+    print(e)
     
 
 
@@ -153,7 +138,7 @@ plt.show()
     
     <footer>
        <br>
-        <p>  <img src="http://sagemath.org/pix/sage_logo_new_l_hc.png" width="200px"></p>
+        <p><img src="./signature.jpg" width="210px" hspace="15">   <img src="http://sagemath.org/pix/sage_logo_new_l_hc.png" width="200px"></p>
 
      </footer>  
 </body>
